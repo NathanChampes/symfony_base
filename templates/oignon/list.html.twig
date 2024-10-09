@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Oignons{% endblock %}
+
+{% block body %}
+    <h1>Liste des Oignons</h1>
+
+    <ul>
+        {% for oignon in oignons %}
+            <li>{{ oignon.name }}</li>
+        {% else %}
+            <li>Aucune image trouvée</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

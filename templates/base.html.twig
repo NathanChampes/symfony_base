@@ -10,8 +10,14 @@
         {% block javascripts %}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
+        {# <nav>
+            <ul>
+                <li><a href="{{ path('home') }}">Home</a></li>
+            </ul> #}
     </head>
+    {% include "_header.html.twig" %}
     <body>
         {% block body %}{% endblock %}
     </body>
+    {% include "_footer.html.twig" %}
 </html>

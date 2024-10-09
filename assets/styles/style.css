@@ -1,0 +1,77 @@
+.main-container {
+    padding-bottom: 100px; /* Ajoute de l'espace en bas pour le footer */
+}
+
+/* Style pour le conteneur du formulaire de burger */
+.burger-form-container {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style pour le titre du formulaire de burger */
+.burger-form-title {
+    font-size: 3em;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+/* Style pour le formulaire de burger */
+.burger-form {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.burger-form .form-group {
+    margin-bottom: 15px;
+}
+
+.burger-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.burger-form input, .burger-form select, .burger-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.burger-form-submit {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    background-color: #ffcc00;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.burger-form-submit:hover {
+    background-color: #e6b800;
+}
+
+/* Style pour le lien de retour */
+.burger-form-back-link {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    transition: color 0.3s;
+}
+
+.burger-form-back-link:hover {
+    color: #e6b800;
+}

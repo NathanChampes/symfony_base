@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un nouveau Burger{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('styles/style.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="main-container">
+        <div class="burger-form-container">
+            <h1 class="burger-form-title">Créer un nouveau Burger</h1>
+
+            {{ form_start(form, {'attr': {'class': 'burger-form'}}) }}
+                {{ form_widget(form) }}
+                <button class="btn burger-form-submit">Créer</button>
+            {{ form_end(form) }}
+
+            <a href="{{ path('burger_list') }}" class="burger-form-back-link">Retour à la liste des burgers</a>
+        </div>
+    </div>
+{% endblock %}

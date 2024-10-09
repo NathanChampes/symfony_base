@@ -1,0 +1,48 @@
+<head>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+
+<header>
+    <h1>MONKEY ISLAND</h1>
+    <nav>
+        <ul>
+            <li><a href="{{ path('home') }}">Accueil</a></li>
+            <li><a href="{{ path('burger_list') }}">Nos Burgers</a></li>
+            <li><a href="{{ path('burger_list_db') }}">Nos Burgers (bdd)</a></li>
+            <li><a href="{{ path('burger_new') }}">Créer un Burger</a></li>
+        </ul>
+    </nav>
+    <form id="ingredient-search-form">
+        <input type="text" id="ingredient-input" placeholder="Rechercher un ingrédient" required>
+        <button type="submit">Rechercher</button>
+    </form>
+</header>
+
+<script>
+    $(document).ready(function() {
+        $("#ingredient-input").autocomplete({
+            source: function(request, response) {
+                $.ajax({
+                    url: "{{ path('ingredient_suggestions') }}",
+                    dataType: "json",
+                    data: {
+                        term: request.term
+                    },
+                    success: function(data) {
+                        response(data);
+                    }
+                });
+            }
+        });
+
+        $('#ingredient-search-form').on('submit', function(event) {
+            event.preventDefault();
+            const ingredient = $('#ingredient-input').val();
+            if (ingredient) {
+                window.location.href = '{{ path('burger_list_by_ingredient', {'ingredient': 'PLACEHOLDER'}) }}'.replace('PLACEHOLDER', ingredient);
+            }
+        });
+    });
+</script>

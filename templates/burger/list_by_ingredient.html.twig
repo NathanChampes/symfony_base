@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Burgers avec {{ ingredient }}{% endblock %}
+
+{% block body %}
+    <h1>Burgers avec {{ ingredient }}</h1>
+
+    {% if burgers is empty %}
+        <p>Aucun burger ne contient cet ingrédient.</p>
+    {% else %}
+        <ul>
+            {% for burger in burgers %}
+                <li>
+                    <h2>{{ burger.name }}</h2>
+                    <p>Prix: {{ burger.price }} €</p>
+                    <p>Pain: {{ burger.pain.name }}</p>
+                    <p>Oignons: 
+                        {% for oignon in burger.oignons %}
+                            {{ oignon.name }}{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                    <p>Sauces: 
+                        {% for sauce in burger.sauces %}
+                            {{ sauce.name }}{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

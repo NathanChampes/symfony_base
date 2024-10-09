@@ -1,3 +1,107 @@
+/* app.css */
+
+/* Style global pour le corps de la page */
 body {
-    background-color: skyblue;
+    color: white;
+    background-color: rgb(225, 222, 229);
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/img/f20gSmWi6qn3YLFGI3Gv-1-xdw2q_2x-7a0d32a26966373a7fefa549dcdbbfc8.png");
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style pour l'en-tête */
+header {
+    background-color: rgba(51, 51, 51, 0.5); 
+    padding: 10px 0;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Style pour le pied de page */
+footer {
+    background-color: rgba(51, 51, 51, 0.5); 
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}
+
+/* Style pour le contenu principal */
+main {
+    padding: 20px;
+}
+
+/* Style pour les titres */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Style pour les listes */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Style pour les liens */
+a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* styles.css */
+.ui-autocomplete {
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    /* Ajoutez d'autres styles selon vos besoins */
+}
+
+.ui-menu-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.ui-menu-item:hover {
+    background-color: #f0f0f0;
 }

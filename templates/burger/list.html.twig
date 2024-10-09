@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Burgers{% endblock %}
+
+{% block body %}
+    <h1>Liste des Burgers</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th>Pain</th>
+                <th>Oignons</th>
+                <th>Sauces</th>
+                <th>Image</th>
+                <th>Commentaires</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for burger in burgers %}
+                <tr>
+                    <td>{{ burger.name }}</td>
+                    <td>{{ burger.price }}</td>
+                    <td>{{ burger.pain.name }}</td>
+                    <td>
+                        {% for oignon in burger.oignons %}
+                            {{ oignon.name }}{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for sauce in burger.sauces %}
+                            {{ sauce.name }}{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% if burger.image %}
+                            <img src="{{ asset('images/' ~ burger.image.name) }}" alt="{{ burger.name }}" width="100">
+                        {% else %}
+                            Pas d'image
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% for commentaire in burger.commentaires %}
+                            {{ commentaire.name }}{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
